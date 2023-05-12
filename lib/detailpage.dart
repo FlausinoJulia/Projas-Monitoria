@@ -17,18 +17,29 @@ class DetailPage extends StatelessWidget {
   }
 
   userDetail() {
-    return Container(
-      padding: new EdgeInsets.all(32.0),
-      child: ListTile(
-        title: Text(
-          monitor.nome,
-          style: TextStyle(
-            fontWeight: FontWeight.w500
-          ),
-        ),
-        subtitle: Text(monitor.horarios),
-        leading: Image.network(monitor.foto)
-      ),
+    return Scaffold (
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 20),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(200.0),
+              child:  Image.network(
+                monitor.foto,
+                width: 200.0,
+                height: 200.0,
+                fit: BoxFit.fill,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(monitor.nome),
+            SizedBox(height: 20),
+            Text("Horários"),
+            SizedBox(height: 20),
+            Text(monitor.horarios)
+          ],
+        )
+      )
     );
   }
 }
