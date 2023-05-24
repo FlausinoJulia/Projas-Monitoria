@@ -18,24 +18,21 @@ class DetailPage extends StatelessWidget {
 
   userDetail() {
     return Container (
-      child: Padding(
-        padding: EdgeInsets.all(15.0),
+      child: Center(
         child: Column(
           children: [
-            Container(
-              
-            )
-            ClipRRect(
-              
-              borderRadius: BorderRadius.circular(200.0),
-              child:  Image.network(
-                monitor.foto,
-                width: 148.0,
-                height: 148.0,
-                fit: BoxFit.fill,
-              ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 20.0, top: 20.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(200.0),
+                child:  Image.network(
+                  monitor.foto,
+                  width: 140.0,
+                  height: 140.0,
+                  fit: BoxFit.fill,
+                ),
+              )
             ),
-            SizedBox(height: 20),
             Text(
               monitor.nome,
               style: TextStyle(
@@ -44,15 +41,13 @@ class DetailPage extends StatelessWidget {
                 fontSize: 19
               )
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             Text(monitor.curso),
             SizedBox(height: 20),
             Text("Horários"),
-            SizedBox(height: 20),
-            Text(monitor.horarios)
           ],
         ),
-      )
+      ),
     );
   }
 }

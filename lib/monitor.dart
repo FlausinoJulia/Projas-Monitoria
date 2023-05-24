@@ -2,11 +2,11 @@ class Monitor{
   int id = 0;
   String nome = "";
   String email = "";
-  List<String> horarios = [];
+  String horarios = "";
   String foto = "";
   String curso = "";
 
-  Monitor(int id, String nome, String email, List<String> horarios, String foto, String curso){
+  Monitor(int id, String nome, String email, String horarios, String foto, String curso){
     this.id = id;
     this.nome = nome;
     this.email = email;
