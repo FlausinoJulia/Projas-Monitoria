@@ -63,11 +63,25 @@ class _BuildListViewState extends State{
         itemCount: monitores.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(
-                monitores[index].nome,
-                style: TextStyle (fontSize: 20.0, color: Colors.black)
+            visualDensity: VisualDensity(vertical:3),
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 55.0,
+                minHeight: 55.0,
+                maxWidth: 55.0,
+                maxHeight: 55.0
               ),
-            subtitle: Text(monitores[index].email),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.network(monitores[index].foto, fit: BoxFit.fill),
+              )
+            ),
+            title: Text(
+              monitores[index].nome,
+              style: TextStyle (fontSize: 18.0, color: Colors.black)
+            ),
+
+            subtitle: Text (monitores[index].email),
 
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
